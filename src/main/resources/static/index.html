@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Đăng nhập - JWT Demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script src="js/auth.js"></script>
+</head>
+<body class="bg-light">
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+            <div class="card shadow">
+                <div class="card-header bg-success text-white text-center">
+                    <h4>Đăng nhập</h4>
+                </div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <input type="text" id="username" class="form-control" placeholder="Username" value="admin">
+                    </div>
+                    <div class="mb-3">
+                        <input type="password" id="password" class="form-control" placeholder="Password"
+                               value="admin123">
+                    </div>
+                    <button onclick="loginAdmin()" class="btn btn-danger w-100 mb-2">
+                        Đăng nhập ADMIN (admin / admin123)
+                    </button>
+                    <button onclick="loginUser()" class="btn btn-primary w-100">
+                        Đăng nhập USER thường (user01 / user123)
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    async function login() {
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        await doLogin(username, password);
+    }
+    async function loginUser() {
+        await doLogin('user01', 'user123');
+    }
+
+    async function doLogin(username, password) {
+        try {
+            const res = await fetch(LOGIN_API, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json'
+                 'Accept': 'application/json',
+                'X-Requested-With': 'XMLHttpRequest'},
+                body: JSON.stringify({ username, password })
+            });
+            const data = await res.json();
+            if (res.ok) {
+                saveToken(data.token, username);
+                setTimeout(() => window.location.href = 'dashboard.html', 1000);
+            } else {
+                Swal.fire('Lỗi', data.message || 'Sai tài khoản/mật khẩu', 'error');
+            }
+        } catch (e) {
+            Swal.fire('Lỗi kết nối', 'Không thể kết nối server', 'error');
+        }
+    }
+</script>
+</body>
+</html>
