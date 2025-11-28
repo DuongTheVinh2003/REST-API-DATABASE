@@ -1,4 +1,4 @@
-package com.example.restapidata.serviec;
+package com.example.restapidata.service;
 
 import com.example.restapidata.config.JwtService;
 import com.example.restapidata.dto.AuthRequest;

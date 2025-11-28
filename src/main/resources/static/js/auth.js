@@ -1,10 +1,10 @@
 
 console.log("auth.js đã được load!");
 const API_BASE = '';
-const LOGIN_API = API_BASE + '/api/auth/login';
-const REGISTER_API = API_BASE + '/api/auth/register';
-const USER_API = API_BASE + '/api/user/profile';
-const ADMIN_API = API_BASE + '/api/admin/dashboard';
+const API_LOGIN = API_BASE + '/api/auth/login';
+const API_REGISTER = API_BASE + '/api/auth/register';
+const API_USER_PROFILE = API_BASE + '/api/user/profile';
+const API_ADMIN_DASHBOARD = API_BASE + '/api/admin/dashboard';
 
 // Lưu token
 function saveToken(token, username = 'User') {

@@ -1,4 +1,4 @@
-package com.example.REST_API_DATA.dto;
+package com.example.restapidata.dto;
 
 public record AuthRequest (
         String username,

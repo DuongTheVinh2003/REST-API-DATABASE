@@ -1,4 +1,4 @@
-async function callUserApi() {
+async function fetchUserProfile() {
     const res = await fetch('/api/user/profile', {
         headers: { 'Authorization': 'Bearer ' + localStorage.getItem('token') }
     });
@@ -6,7 +6,7 @@ async function callUserApi() {
     document.getElementById('userResult').textContent = res.ok ? text : 'Lỗi: ' + res.status;
 }
 
-async function callAdminApi() {
+async function fetchAdminDashboard() {
     const res = await fetch('/api/admin/dashboard', {
         headers: { 'Authorization': 'Bearer ' + localStorage.getItem('token') }
     });

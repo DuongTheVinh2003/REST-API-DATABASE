@@ -1,7 +1,7 @@
-package com.example.REST_API_DATA.config;
+package com.example.restapidata.config;
 
 
-import com.example.REST_API_DATA.serviec.UserDetailsServiceImpl;
+import com.example.restapidata.service.UserDetailsServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

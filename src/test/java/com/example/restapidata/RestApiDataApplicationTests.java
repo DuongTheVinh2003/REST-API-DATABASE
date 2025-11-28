@@ -1,4 +1,4 @@
-package com.example.REST_API_DATA;
+package com.example.restapidata;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,13 +1,13 @@
-package com.example.REST_API_DATA;
+package com.example.restapidata;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class RestApiDataApplication {
+public class RestapiDataApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(RestApiDataApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(RestapiDataApplication.class, args);
+    }
 
 }

@@ -1,5 +1,4 @@
-package com.example.REST_API_DATA.controller;
-
+package com.example.restapidata.controller;
 
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;

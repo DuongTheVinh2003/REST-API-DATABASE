@@ -1,4 +1,4 @@
-package com.example.REST_API_DATA.entity;
+package com.example.restapidata.entity;
 
 public class Admin {
 }

@@ -1,6 +1,6 @@
-package com.example.REST_API_DATA.repository;
+package com.example.restapidata.repository;
 
-import com.example.REST_API_DATA.entity.User;
+import com.example.restapidata.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

@@ -1,10 +1,9 @@
-package com.example.REST_API_DATA.controller;
+package com.example.restapidata.controller;
 
-
-import com.example.REST_API_DATA.dto.AuthRequest;
-import com.example.REST_API_DATA.dto.AuthResponse;
-import com.example.REST_API_DATA.dto.RegisterRequest;
-import com.example.REST_API_DATA.serviec.AuthService;
+import com.example.restapidata.dto.AuthRequest;
+import com.example.restapidata.dto.AuthResponse;
+import com.example.restapidata.dto.RegisterRequest;
+import com.example.restapidata.service.AuthService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

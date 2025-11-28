@@ -1,5 +1,4 @@
-package com.example.restapidata.serviec;
-
+package com.example.restapidata.service;
 
 import com.example.restapidata.repository.UserRepository;
 import lombok.RequiredArgsConstructor;

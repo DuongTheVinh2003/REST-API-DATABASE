@@ -1,4 +1,4 @@
-package com.example.REST_API_DATA.config;
+package com.example.restapidata.config;
 
 
 import io.jsonwebtoken.Claims;
