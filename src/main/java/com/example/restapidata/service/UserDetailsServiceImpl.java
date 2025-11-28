@@ -1,7 +1,7 @@
-package com.example.REST_API_DATA.serviec;
+package com.example.restapidata.serviec;
 
 
-import com.example.REST_API_DATA.repository.UserRepository;
+import com.example.restapidata.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

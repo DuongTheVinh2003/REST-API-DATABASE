@@ -11,8 +11,6 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.Collection;
 import java.util.List;
 
-import com.example.REST_API_DATA.entity.Role;
-
 @Data
 @Builder
 @NoArgsConstructor

@@ -1,13 +1,13 @@
-package com.example.REST_API_DATA.serviec;
+package com.example.restapidata.serviec;
 
-import com.example.REST_API_DATA.config.JwtService;
-import com.example.REST_API_DATA.dto.AuthRequest;
-import com.example.REST_API_DATA.dto.AuthResponse;
-import com.example.REST_API_DATA.dto.RegisterRequest;
-import com.example.REST_API_DATA.entity.Role;
-import com.example.REST_API_DATA.repository.UserRepository;
+import com.example.restapidata.config.JwtService;
+import com.example.restapidata.dto.AuthRequest;
+import com.example.restapidata.dto.AuthResponse;
+import com.example.restapidata.dto.RegisterRequest;
+import com.example.restapidata.entity.Role;
+import com.example.restapidata.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
-import com.example.REST_API_DATA.entity.User;
+import com.example.restapidata.entity.User;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;
