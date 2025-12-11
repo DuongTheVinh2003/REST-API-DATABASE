@@ -1,12 +1,11 @@
-
 console.log("auth.js đã được load!");
-const API_BASE = '';
-const API_LOGIN = API_BASE + '/api/auth/login';
-const API_REGISTER = API_BASE + '/api/auth/register';
-const API_USER_PROFILE = API_BASE + '/api/user/profile';
-const API_ADMIN_DASHBOARD = API_BASE + '/api/admin/dashboard';
+const API_BASE = 'http://localhost:8080';
+//const API_URL = "http://localhost:8080";
+const LOGIN_API    = API_BASE + '/api/auth/login';
+const REGISTER_API = API_BASE + '/api/auth/register';
+const USER_API     = API_BASE + '/api/user/profile';
+const ADMIN_API    = API_BASE + '/api/admin/dashboard';
 
-// Lưu token
 function saveToken(token, username = 'User') {
     localStorage.setItem('token', token);
     localStorage.setItem('username', username);
@@ -22,7 +21,10 @@ window.doLogin = async function(username, password) {
     try {
         const res = await fetch(LOGIN_API, {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
             body: JSON.stringify({ username, password })
         });
 
@@ -39,7 +41,6 @@ window.doLogin = async function(username, password) {
     }
 };
 
-// Gọi API có token
 async function callSecuredApi(url, successMsg = 'Thành công!') {
     const token = localStorage.getItem('token');
     if (!token) {
@@ -62,17 +63,26 @@ async function callSecuredApi(url, successMsg = 'Thành công!') {
     }
 }
 
-// Đăng xuất
+
 function logout() {
-    localStorage.clear();
+
+    localStorage.removeItem('token');
+    localStorage.removeItem('username');
     Swal.fire('Đã đăng xuất!', '', 'info').then(() => {
         window.location.href = 'login.html';
     });
 }
 
-window.loginAdmin = function() { window.doLogin('admin', 'admin123'); }
-window.loginUser  = function() { window.doLogin('user01', 'user123'); }
 
-// Test quyền
+window.loginAdmin = function() {
+    console.log("Bắt đầu gọi loginAdmin!");
+    window.doLogin('admin','123456');
+}
+window.loginUser  = function() {
+    console.log("Bắt đầu gọi loginUser!");
+    window.doLogin('user01','123456');
+}
+
+
 function testUserArea() { callSecuredApi(USER_API, 'Bạn đã vào khu vực User'); }
 function testAdminArea() { callSecuredApi(ADMIN_API, 'Chào mừng Admin!'); }
